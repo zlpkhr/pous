@@ -228,3 +228,10 @@ print(
     f"\n[STATS] Missing UEFA coefficients: {missing_count}/{total_count} "
     f"({(missing_count/total_count)*100:.2f}%)"
 )
+
+# ---------------------------------------------------------------------------
+# Persist enriched transfers data (overwrites original CSV)
+# ---------------------------------------------------------------------------
+
+df.to_csv(Path("transfers.csv"), index=False)
+print("[INFO] transfers.csv has been updated with 'from_club_uefa_coeff' column.")
